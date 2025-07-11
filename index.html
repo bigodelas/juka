@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Você 💖</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>💌 Um lugar só seu</h1>
+    <p>Tem coisas que só você sabe... tenta lembrar 🗝️</p>
+
+    <input type="password" id="senha" placeholder="Digite a senha">
+ <button onclick="verificarSenha(event)">Entrar</button>
+
+
+    <div id="mensagemSecreta" class="hidden">
+      <h2>Você conseguiu, amor! 💗</h2>
+      <p>
+        Eu fiz esse espacinho só pra você.<br>
+        Queria te lembrar o quanto você é importante pra mim.<br><br>
+        Obrigado por ser minha luz. Te amo mais que tudo! 🌙✨
+      </p>
+
+      <!-- Galeria de fotos com legendas -->
+      <div class="gallery">
+        <figure>
+          <img src="gallery/foto1.jpg" alt="Foto 1" />
+          <figcaption>Eu e minhas gatinhas 🐱💘</figcaption>
+        </figure>
+        <figure>
+          <img src="gallery/foto2.jpg" alt="Foto 2" />
+          <figcaption>A gente no nosso mundinho</figcaption>
+        </figure>
+        <figure>
+          <img src="gallery/foto3.jpg" alt="Foto 3" />
+          <figcaption>Sorrisos que só você me arranca</figcaption>
+        </figure>
+        <figure>
+          <img src="gallery/foto4.jpg" alt="Foto 4" />
+          <figcaption>Nosso riso é refúgio</figcaption>
+        </figure>
+        <figure>
+          <img src="gallery/foto5.jpg" alt="Foto 5" />
+          <figcaption>Ali, no teu peito é casa</figcaption>
+        </figure>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+    function verificarSenha() {
+      const senhaCorreta = "pipica"; // coloque a senha que quiser aqui
+      const inputSenha = document.getElementById("senha").value;
+      const mensagem = document.getElementById("mensagemSecreta");
+
+      if (inputSenha === senhaCorreta) {
+        mensagem.classList.remove("hidden");
+        // Opcional: limpar campo e esconder input
+        document.getElementById("senha").value = "";
+        document.getElementById("senha").style.display = "none";
+        event.target.style.display = "none"; // esconder botão
+      } else {
+        alert("Senha incorreta! Tente novamente.");
+        mensagem.classList.add("hidden");
+      }
+    }
+</script>
